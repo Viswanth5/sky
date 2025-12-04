@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Skyline Digital Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 25px rgba(79, 195, 255, 0.3); }
+      50% { box-shadow: 0 0 45px rgba(171, 77, 255, 0.7); }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    .bg-skyline {
+      background: radial-gradient(circle at top, #2A53FF 0, #060B18 55%, #010203 100%);
+    }
+    .glass-card {
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+    }
+    .border-neon {
+      border-image: linear-gradient(135deg, #4FC3FF, #AB4DFF, #FF57C9) 1;
+      border-width: 1px;
+      border-style: solid;
+    }
+    .btn-neon {
+      background-image: linear-gradient(135deg, #4FC3FF, #AB4DFF, #FF57C9);
+      background-size: 200% 200%;
+      animation: shimmer 4s linear infinite;
+    }
+    .btn-neon:hover {
+      filter: drop-shadow(0 0 12px rgba(111, 207, 255, 0.85));
+    }
+    .animate-glow {
+      animation: glow 4s ease-in-out infinite;
+    }
+    .animate-float {
+      animation: float 5s ease-in-out infinite;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #4FC3FF, #AB4DFF, #FF57C9);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .badge-pill {
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(12px);
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+  </style>
+</head>
+
+<body class="bg-skyline text-slate-100 min-h-screen antialiased">
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-40 backdrop-blur bg-slate-950/40 border-b border-slate-800/40">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-blue-500 via-cyan-400 to-purple-500 flex items-center justify-center animate-glow">
+          <span class="text-xs font-bold">SKY</span>
+        </div>
+        <div>
+          <h1 class="text-lg font-semibold tracking-wide">Skyline Digital Services</h1>
+          <p class="text-[11px] text-slate-400 uppercase tracking-[0.18em]">Digital • AI • Creative</p>
+        </div>
+      </div>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300">
+        <a href="#services" class="hover:text-cyan-300">Services</a>
+        <a href="#portfolio" class="hover:text-cyan-300">Work</a>
+        <a href="#pricing" class="hover:text-cyan-300">Pricing</a>
+        <a href="#contact" class="hover:text-cyan-300">Contact</a>
+        <a href="#hero" class="btn-neon text-sm px-4 py-2 rounded-full font-medium shadow-lg">Start Your Project</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4">
+
+    <!-- HERO -->
+    <section id="hero" class="py-16 md:py-24 flex flex-col md:flex-row gap-10 items-center">
+      <!-- Left -->
+      <div class="flex-1 space-y-6">
+        <span class="badge-pill inline-flex items-center gap-2 px-3 py-1 text-xs text-slate-300">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          Next-Gen Digital & AI Agency
+        </span>
+
+        <h2 class="text-3xl md:text-5xl font-semibold leading-tight">
+          Building the <span class="gradient-text">Digital Skyline</span> of Tomorrow.
+        </h2>
+
+        <p class="text-sm md:text-base text-slate-300 max-w-xl">
+          Creative. Intelligent. Automated. Everything your business needs to grow — built under one skyline.
+          From videos and websites to AI models and ads, Skyline turns ideas into digital power.
+        </p>
+
+        <div class="flex flex-wrap gap-3">
+          <a href="#contact" class="btn-neon px-5 py-2.5 rounded-full text-sm font-semibold">
+            Start Your Project
+          </a>
+          <a href="#services" class="px-5 py-2.5 rounded-full text-sm font-semibold border border-slate-600 hover:border-cyan-400/70 hover:bg-slate-900/50">
+            Explore Our Services
+          </a>
+        </div>
+
+        <div class="flex flex-wrap gap-2 text-[11px] text-slate-300 mt-4">
+          <span class="badge-pill px-3 py-1">⚡ AI-Powered Solutions</span>
+          <span class="badge-pill px-3 py-1">🎥 Creative & Motion Design</span>
+          <span class="badge-pill px-3 py-1">💻 Websites & Software</span>
+          <span class="badge-pill px-3 py-1">🚀 Marketing + Growth</span>
+        </div>
+      </div>
+
+      <!-- Right visual -->
+      <div class="flex-1 flex items-center justify-center">
+        <div class="relative w-full max-w-md h-80 glass-card rounded-3xl border-neon overflow-hidden animate-float">
+          <!-- Abstract skyline bars -->
+          <div class="absolute inset-x-6 bottom-10 flex items-end gap-3">
+            <div class="flex-1 h-24 bg-gradient-to-t from-blue-500/70 via-cyan-400 to-sky-200 rounded-xl shadow-[0_0_35px_rgba(79,195,255,0.8)]"></div>
+            <div class="flex-1 h-40 bg-gradient-to-t from-purple-600/80 via-fuchsia-400 to-pink-200 rounded-xl shadow-[0_0_40px_rgba(171,77,255,0.9)]"></div>
+            <div class="flex-1 h-32 bg-gradient-to-t from-cyan-500/80 via-sky-300 to-emerald-200 rounded-xl shadow-[0_0_30px_rgba(111,207,255,0.9)]"></div>
+            <div class="flex-1 h-52 bg-gradient-to-t from-blue-700 via-indigo-400 to-slate-100 rounded-xl shadow-[0_0_50px_rgba(42,83,255,1)]"></div>
+          </div>
+          <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-64 h-24 rounded-[999px] border border-cyan-300/40 blur-sm"></div>
+          <div class="absolute top-6 left-6 text-xs space-y-2">
+            <div class="badge-pill px-3 py-1">+120% Engagement</div>
+            <div class="badge-pill px-3 py-1">Real-time Analytics</div>
+          </div>
+          <div class="absolute top-8 right-6 badge-pill px-3 py-1 text-xs">
+            AI · Automation · Ads
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-12 md:py-16">
+      <div class="grid md:grid-cols-[1.2fr_1fr] gap-8 items-center">
+        <div>
+          <h3 class="text-xl md:text-3xl font-semibold mb-4">
+            We Turn Ideas Into <span class="gradient-text">Digital Power.</span>
+          </h3>
+          <p class="text-slate-300 text-sm md:text-base mb-4">
+            Skyline Digital Services is a next-gen creative and technology agency shaping the future of business.
+            We blend <span class="text-cyan-300 font-semibold">design, AI, marketing, and software</span> into one powerful ecosystem — helping brands scale faster, smarter, and louder in a digital-first world.
+          </p>
+          <p class="text-slate-300 text-sm md:text-base mb-6">
+            Whether you’re a startup, local business, creator, or growing company, Skyline builds the tools,
+            experiences, and strategies that make your brand unforgettable and result-focused.
+          </p>
+          <div class="grid grid-cols-2 gap-4 text-xs md:text-sm">
+            <div class="glass-card rounded-2xl p-4 border border-slate-700/60 hover:border-cyan-400/70 transition">
+              <p class="font-semibold mb-1">🔥 Creativity with Purpose</p>
+              <p class="text-slate-300">Every design and video is crafted to convert, not just look good.</p>
+            </div>
+            <div class="glass-card rounded-2xl p-4 border border-slate-700/60 hover:border-cyan-400/70 transition">
+              <p class="font-semibold mb-1">🤖 Technology that Works Harder</p>
+              <p class="text-slate-300">AI, automation, and software that directly impact your growth.</p>
+            </div>
+            <div class="glass-card rounded-2xl p-4 border border-slate-700/60 hover:border-cyan-400/70 transition">
+              <p class="font-semibold mb-1">⚡ Fast Delivery, Premium Quality</p>
+              <p class="text-slate-300">Clear timelines, clean communication, professional results.</p>
+            </div>
+            <div class="glass-card rounded-2xl p-4 border border-slate-700/60 hover:border-cyan-400/70 transition">
+              <p class="font-semibold mb-1">📈 Growth as a Priority</p>
+              <p class="text-slate-300">We care about your results, not just delivering files.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-3xl p-6 border-neon space-y-4">
+          <p class="text-xs font-semibold text-slate-400 tracking-[0.18em] uppercase"> Snapshot </p>
+          <div class="grid grid-cols-3 gap-4 text-center text-sm">
+            <div>
+              <p class="text-2xl font-semibold gradient-text">50+</p>
+              <p class="text-slate-400 text-xs">Projects</p>
+            </div>
+            <div>
+              <p class="text-2xl font-semibold gradient-text">20+</p>
+              <p class="text-slate-400 text-xs">Brands</p>
+            </div>
+            <div>
+              <p class="text-2xl font-semibold gradient-text">10+</p>
+              <p class="text-slate-400 text-xs">Industries</p>
+            </div>
+          </div>
+          <p class="text-xs text-slate-400">
+            *Numbers are placeholders — update with real stats as you grow.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-12 md:py-16">
+      <div class="flex items-center justify-between mb-8">
+        <h3 class="text-xl md:text-3xl font-semibold">What We Do Under One Skyline.</h3>
+        <span class="hidden md:inline badge-pill px-3 py-1 text-xs">End-to-End Digital & AI Solutions</span>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6">
+        <!-- Creative Studio -->
+        <div class="glass-card rounded-3xl p-5 border border-slate-700/60 hover:border-cyan-400/70 hover:-translate-y-2 hover:shadow-[0_0_35px_rgba(79,195,255,0.6)] transition transform">
+          <p class="text-xs text-fuchsia-300 mb-1">Creative Studio</p>
+          <h4 class="font-semibold mb-2">We Make Your Brand Look Like Success.</h4>
+          <p class="text-sm text-slate-300 mb-3">
+            High-impact video editing, social media ads, motion graphics, product reels, and story-based ad films that make your brand unforgettable.
+          </p>
+          <p class="text-xs text-slate-400">Your visuals create your first impression — we make them iconic.</p>
+        </div>
+
+        <!-- Web & Software -->
+        <div class="glass-card rounded-3xl p-5 border border-slate-700/60 hover:border-cyan-400/70 hover:-translate-y-2 hover:shadow-[0_0_35px_rgba(79,195,255,0.6)] transition transform">
+          <p class="text-xs text-cyan-300 mb-1">Web & Software</p>
+          <h4 class="font-semibold mb-2">Building Digital Systems That Scale.</h4>
+          <p class="text-sm text-slate-300 mb-3">
+            Animated business websites, modern landing pages, e-commerce setups, and custom CRM/ERP tools tailored to your workflow.
+          </p>
+          <p class="text-xs text-slate-400">From simple sites to advanced systems — we build your digital backbone.</p>
+        </div>
+
+        <!-- AI Lab -->
+        <div class="glass-card rounded-3xl p-5 border border-slate-700/60 hover:border-cyan-400/70 hover:-translate-y-2 hover:shadow-[0_0_35px_rgba(79,195,255,0.6)] transition transform">
+          <p class="text-xs text-emerald-300 mb-1">AI Automation Lab</p>
+          <h4 class="font-semibold mb-2">Where Business Meets Intelligence.</h4>
+          <p class="text-sm text-slate-300 mb-3">
+            Custom AI models, chatbots, automated workflows, and prediction systems that cut manual work and boost performance.
+          </p>
+          <p class="text-xs text-slate-400">Automate the boring. Accelerate the growth.</p>
+        </div>
+
+        <!-- Digital Marketing -->
+        <div class="glass-card rounded-3xl p-5 border border-slate-700/60 hover:border-cyan-400/70 hover:-translate-y-2 hover:shadow-[0_0_35px_rgba(79,195,255,0.6)] transition transform">
+          <p class="text-xs text-yellow-300 mb-1">Digital Marketing</p>
+          <h4 class="font-semibold mb-2">Growth That’s Measurable & Powerful.</h4>
+          <p class="text-sm text-slate-300 mb-3">
+            Meta & Instagram ad campaigns, lead funnels, content strategy, analytics and performance tracking for real ROI.
+          </p>
+          <p class="text-xs text-slate-400">We don’t run ads. We build revenue engines.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="py-12 md:py-16">
+      <div class="flex items-center justify-between mb-6">
+        <h3 class="text-xl md:text-3xl font-semibold">Projects That Rise Above the Rest.</h3>
+        <div class="hidden md:flex gap-2 text-xs">
+          <span class="badge-pill px-3 py-1">🎥 Video & Ads</span>
+          <span class="badge-pill px-3 py-1">💻 Websites</span>
+          <span class="badge-pill px-3 py-1">🤖 AI Projects</span>
+          <span class="badge-pill px-3 py-1">📱 Design & Branding</span>
+        </div>
+      </div>
+
+      <p class="text-sm text-slate-300 mb-6 max-w-2xl">
+        From small businesses to personal creators, we’ve built digital experiences that stand tall.
+        Explore our best works — ads, websites, apps, branding, AI demos, and motion graphics.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        <!-- Project 1 -->
+        <div class="group glass-card rounded-3xl overflow-hidden border border-slate-700/60 hover:border-cyan-400/70 transition">
+          <div class="h-40 bg-gradient-to-br from-blue-500 via-purple-500 to-fuchsia-500 group-hover:scale-105 transition-transform duration-500"></div>
+          <div class="p-4 space-y-2 text-sm">
+            <p class="text-xs text-cyan-300">Ad Campaign · Promo Video</p>
+            <h4 class="font-semibold">High-Energy Launch Video for Local Brand</h4>
+            <p class="text-xs text-slate-400">
+              A fast-paced, story-driven video that increased engagement and boosted conversions.
+            </p>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="group glass-card rounded-3xl overflow-hidden border border-slate-700/60 hover:border-cyan-400/70 transition">
+          <div class="h-40 bg-gradient-to-br from-sky-500 via-cyan-400 to-emerald-400 group-hover:scale-105 transition-transform duration-500"></div>
+          <div class="p-4 space-y-2 text-sm">
+            <p class="text-xs text-green-300">Website · Business Portal</p>
+            <h4 class="font-semibold">Responsive Business Website for Service Brand</h4>
+            <p class="text-xs text-slate-400">
+              A modern, animated one-page site focused on clarity, speed, and lead generation.
+            </p>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="group glass-card rounded-3xl overflow-hidden border border-slate-700/60 hover:border-cyan-400/70 transition">
+          <div class="h-40 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 group-hover:scale-105 transition-transform duration-500"></div>
+          <div class="p-4 space-y-2 text-sm">
+            <p class="text-xs text-fuchsia-300">AI · Automation</p>
+            <h4 class="font-semibold">Custom Chatbot for Customer Support</h4>
+            <p class="text-xs text-slate-400">
+              Reduced manual responses and delivered instant answers with AI-powered workflows.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY SKYLINE -->
+    <section class="py-12 md:py-16">
+      <h3 class="text-xl md:text-3xl font-semibold mb-6">Why Brands Trust Skyline.</h3>
+      <div class="grid md:grid-cols-3 gap-5 text-sm">
+        <div class="glass-card rounded-3xl p-5 border border-slate-700/60">
+          <p class="font-semibold mb-1">🌆 Next-Gen Aesthetic</p>
+          <p class="text-slate-300">Powered by motion, animation, and neon skyline visuals that feel modern and alive.</p>
+        </div>
+        <div class="glass-card rounded-3xl p-5 border border-slate-700/60">
+          <p class="font-semibold mb-1">🤝 End-to-End Solutions</p>
+          <p class="text-slate-300">Everything from brand visuals to AI automation under one roof.</p>
+        </div>
+        <div class="glass-card rounded-3xl p-5 border border-slate-700/60">
+          <p class="font-semibold mb-1">💡 Smart + Creative Blend</p>
+          <p class="text-slate-300">Rare mix of engineering, AI, and Gen-Z design language.</p>
+        </div>
+        <div class="glass-card rounded-3xl p-5 border border-slate-700/60">
+          <p class="font-semibold mb-1">⚡ Fast & Focused Delivery</p>
+          <p class="text-slate-300">Timelines that respect your business and launch plans.</p>
+        </div>
+        <div class="glass-card rounded-3xl p-5 border border-slate-700/60">
+          <p class="font-semibold mb-1">📈 Growth Mindset</p>
+          <p class="text-slate-300">We care about actual conversions, leads, and outcomes, not just aesthetics.</p>
+        </div>
+        <div class="glass-card rounded-3xl p-5 border border-slate-700/60">
+          <p class="font-semibold mb-1">🧩 Custom Strategies</p>
+          <p class="text-slate-300">Built for your brand, business model, and audience — not copy-paste templates.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="py-12 md:py-16">
+      <h3 class="text-xl md:text-3xl font-semibold mb-6">Loved by Brands. Trusted by Creators.</h3>
+      <div class="grid md:grid-cols-3 gap-5 text-sm">
+        <div class="glass-card rounded-3xl p-5 border border-slate-700/60">
+          <p class="mb-3">“Skyline transformed our business presence. The videos and website changed everything.”</p>
+          <p class="text-xs text-slate-400">— Brand Owner</p>
+        </div>
+        <div class="glass-card rounded-3xl p-5 border border-slate-700/60">
+          <p class="mb-3">“The AI automations saved us hours per week. Game-changer.”</p>
+          <p class="text-xs text-slate-400">— Startup Founder</p>
+        </div>
+        <div class="glass-card rounded-3xl p-5 border border-slate-700/60">
+          <p class="mb-3">“We finally have a digital system and marketing that actually works together.”</p>
+          <p class="text-xs text-slate-400">— Business Owner</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="py-12 md:py-16">
+      <h3 class="text-xl md:text-3xl font-semibold mb-6">Choose Your Growth Path.</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Starter -->
+        <div class="glass-card rounded-3xl p-6 border border-slate-700/60 flex flex-col justify-between">
+          <div>
+            <p class="text-xs text-slate-400 mb-1">Starter</p>
+            <h4 class="font-semibold mb-3">For small businesses starting online.</h4>
+            <ul class="text-sm text-slate-300 space-y-2">
+              <li>• 1 promo video</li>
+              <li>• Basic one-page website</li>
+              <li>• Social media setup</li>
+              <li>• Strategy consultation</li>
+            </ul>
+          </div>
+          <button class="mt-4 w-full btn-neon rounded-full py-2 text-sm font-semibold">
+            Get Starter Plan
+          </button>
+        </div>
+
+        <!-- Growth -->
+        <div class="glass-card rounded-3xl p-6 border-neon animate-glow flex flex-col justify-between">
+          <div>
+            <p class="text-xs text-cyan-300 mb-1">Growth · Most Popular</p>
+            <h4 class="font-semibold mb-3">For brands ready to scale.</h4>
+            <ul class="text-sm text-slate-300 space-y-2">
+              <li>• 3–5 videos & creatives</li>
+              <li>• Full website + UI design</li>
+              <li>• Meta ads management</li>
+              <li>• Branding kit & guidelines</li>
+            </ul>
+          </div>
+          <button class="mt-4 w-full btn-neon rounded-full py-2 text-sm font-semibold">
+            Get Growth Plan
+          </button>
+        </div>
+
+        <!-- Elite -->
+        <div class="glass-card rounded-3xl p-6 border border-slate-700/60 flex flex-col justify-between">
+          <div>
+            <p class="text-xs text-slate-400 mb-1">Skyline Elite</p>
+            <h4 class="font-semibold mb-3">For brands that want everything.</h4>
+            <ul class="text-sm text-slate-300 space-y-2">
+              <li>• Full creative & content suite</li>
+              <li>• Custom software / AI automation</li>
+              <li>• Dedicated marketing support</li>
+              <li>• Strategy + growth blueprint</li>
+            </ul>
+          </div>
+          <button class="mt-4 w-full btn-neon rounded-full py-2 text-sm font-semibold">
+            Talk About Elite
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-12 md:py-16">
+      <div class="grid md:grid-cols-2 gap-8 items-start">
+        <div>
+          <h3 class="text-xl md:text-3xl font-semibold mb-4">Your Growth Journey Starts Here.</h3>
+          <p class="text-sm text-slate-300 mb-4">
+            Tell us what you want to build — a website, an app, a brand video, an AI tool, or a full digital transformation.
+            Skyline will make it happen.
+          </p>
+          <ul class="text-sm text-slate-300 space-y-2">
+            <li>• Personalised strategy call for your business</li>
+            <li>• Clear roadmap, timeline, and deliverables</li>
+            <li>• Transparent pricing — no hidden charges</li>
+          </ul>
+        </div>
+
+        <form class="glass-card rounded-3xl p-6 border border-slate-700/60 space-y-4">
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="text-xs text-slate-400 block mb-1">Name</label>
+              <input type="text" class="w-full bg-slate-900/70 border border-slate-700/70 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-cyan-400" placeholder="Your name" />
+            </div>
+            <div>
+              <label class="text-xs text-slate-400 block mb-1">Phone</label>
+              <input type="text" class="w-full bg-slate-900/70 border border-slate-700/70 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-cyan-400" placeholder="+91..." />
+            </div>
+          </div>
+          <div>
+            <label class="text-xs text-slate-400 block mb-1">Email</label>
+            <input type="email" class="w-full bg-slate-900/70 border border-slate-700/70 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-cyan-400" placeholder="you@example.com" />
+          </div>
+          <div>
+            <label class="text-xs text-slate-400 block mb-1">Business Type</label>
+            <input type="text" class="w-full bg-slate-900/70 border border-slate-700/70 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-cyan-400" placeholder="Startup, local business, creator..." />
+          </div>
+          <div>
+            <label class="text-xs text-slate-400 block mb-1">What service do you need?</label>
+            <textarea rows="3" class="w-full bg-slate-900/70 border border-slate-700/70 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-cyan-400" placeholder="Tell us about your project, goals and timelines."></textarea>
+          </div>
+          <button class="w-full btn-neon rounded-full py-2 text-sm font-semibold">
+            Request a Free Strategy Call
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800/60 mt-8">
+    <div class="max-w-6xl mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-slate-400">
+      <p>Skyline Digital Services — shaping the digital cities of tomorrow.</p>
+      <div class="flex gap-4">
+        <a href="#" class="hover:text-cyan-300">Instagram</a>
+        <a href="#" class="hover:text-cyan-300">YouTube</a>
+        <a href="#" class="hover:text-cyan-300">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
